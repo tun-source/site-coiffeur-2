@@ -1,5 +1,4 @@
 /* Reset */
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +7,7 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden; /* Supprime les débordements horizontaux */
+  overflow-x: hidden;
 }
 
 body {
@@ -18,15 +17,16 @@ body {
 }
 
 img {
-  max-width: 100%; /* Assurer que les images ne débordent jamais */
+  max-width: 100%;
   height: auto;
 }
 
 .container {
-  width: 90%; /* Utiliser 90% pour s'adapter aux petits écrans */
+  width: 90%;
   margin: auto;
-  max-width: 1200px; /* Largeur maximale pour les grands écrans */
+  max-width: 1200px;
 }
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -49,7 +49,7 @@ img {
 .navbar .menu li a {
   text-decoration: none;
   color: #fff;
-  font-weight: 400; /* Poids plus léger */
+  font-weight: 400;
 }
 
 .burger {
@@ -58,15 +58,34 @@ img {
   cursor: pointer;
 }
 
-/* Hero Section */
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  .navbar .menu.active {
+    display: flex;
+  }
+}
+
 /* Hero Section */
 .hero {
   background: url('image1.jpg') no-repeat center center;
-  background-size: contain;
-  background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
   color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -74,36 +93,56 @@ img {
 }
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 3rem; /* Augmenté pour un meilleur espacement */
+  max-width: 90%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
   border-radius: 10px;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem; /* Plus d'espacement sous le titre */
+  margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.2rem;
-  font-weight: 300;
-  margin-bottom: 2rem; /* Augmenté pour éloigner le bouton */
+  margin-bottom: 2rem;
 }
 
 .hero .btn-primary {
-  background-color: #f4a261;
-  color: #fff;
   padding: 0.75rem 1.5rem;
-  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f4a261;
+  border: none;
   border-radius: 5px;
-  font-weight: 600;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .hero .btn-primary:hover {
-  background-color: #e6893b; /* Effet au survol */
-  transform: scale(1.05);   /* Légère augmentation au survol */
+  background-color: #e6893b;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* Services */
@@ -118,11 +157,10 @@ img {
   font-weight: 600;
 }
 
-/* Services Section */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Plus de largeur minimale */
-  gap: 2.5rem; /* Augmenté pour un meilleur espacement */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .service-item {
@@ -134,7 +172,7 @@ img {
 }
 
 .service-item:hover {
-  transform: translateY(-5px); /* Animation subtile au survol */
+  transform: translateY(-5px);
 }
 
 .service-item h3 {
@@ -154,6 +192,15 @@ img {
   width: 100%;
   max-width: 500px;
   border-radius: 10px;
+}
+
+.about-content div {
+  flex: 1;
+  padding: 1rem;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
 }
 
 /* Gallery */
@@ -200,6 +247,11 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background: #e6893b;
 }
 
 /* Footer */
@@ -208,4 +260,15 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .services-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
 }
