@@ -1,0 +1,195 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #222;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar .menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400; /* Poids plus léger */
+}
+
+.burger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  background: url('image1.jpg') no-repeat center center;
+  background-size: contain;
+  background-attachment: fixed;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem; /* Augmenté pour un meilleur espacement */
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem; /* Plus d'espacement sous le titre */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 2rem; /* Augmenté pour éloigner le bouton */
+}
+
+.hero .btn-primary {
+  background-color: #f4a261;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: #e6893b; /* Effet au survol */
+  transform: scale(1.05);   /* Légère augmentation au survol */
+}
+
+/* Services */
+.services {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Plus de largeur minimale */
+  gap: 2.5rem; /* Augmenté pour un meilleur espacement */
+}
+
+.service-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px); /* Animation subtile au survol */
+}
+
+.service-item h3 {
+  font-weight: 400;
+}
+
+/* About */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.about-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+  padding: 4rem 2rem;
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input, .contact textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact button {
+  background: #f4a261;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
